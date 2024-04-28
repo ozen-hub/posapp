@@ -7,11 +7,10 @@ import java.util.Set;
 @Entity
 public class Customer {
     @Id
-    private long id;
-
+    private String id;
     private String name;
     private String address;
-    private String salary;
+    private Double salary;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
     private Set<Orders> orders = new HashSet<>();
@@ -22,7 +21,14 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(long id, String name, String address, String salary, Set<Orders> orders, LoyaltyCard loyaltyCard) {
+    public Customer(String id, String name, String address, Double salary) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.salary = salary;
+    }
+
+    public Customer(String id, String name, String address, Double salary, Set<Orders> orders, LoyaltyCard loyaltyCard) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -31,11 +37,11 @@ public class Customer {
         this.loyaltyCard = loyaltyCard;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -55,11 +61,11 @@ public class Customer {
         this.address = address;
     }
 
-    public String getSalary() {
+    public Double getSalary() {
         return salary;
     }
 
-    public void setSalary(String salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
 

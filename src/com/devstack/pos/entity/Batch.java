@@ -7,7 +7,7 @@ import java.util.Date;
 @Entity
 public class Batch {
     @Id
-    private long id;
+    private String id;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(columnDefinition = "DATETIME")
     private Date expirationDate;
@@ -20,18 +20,18 @@ public class Batch {
     public Batch() {
     }
 
-    public Batch(long id, Date expirationDate, Blob barcode, Product product) {
+    public Batch(String id, Date expirationDate, Blob barcode, Product product) {
         this.id = id;
         this.expirationDate = expirationDate;
         this.barcode = barcode;
         this.product = product;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

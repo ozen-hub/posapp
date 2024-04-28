@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class LoyaltyCard {
     @Id
-    private long id;
+    private String id;
     private String cardNumber;
     private String type;
 
@@ -15,18 +15,18 @@ public class LoyaltyCard {
     public LoyaltyCard() {
     }
 
-    public LoyaltyCard(long id, String cardNumber, String type, Customer customer) {
+    public LoyaltyCard(String id, String cardNumber, String type, Customer customer) {
         this.id = id;
         this.cardNumber = cardNumber;
         this.type = type;
         this.customer = customer;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

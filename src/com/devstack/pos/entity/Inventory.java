@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Inventory {
     @Id
-    private long id;
+    private String id;
     private int qty;
     @OneToOne(fetch = FetchType.LAZY)
     private Product product;
@@ -13,17 +13,17 @@ public class Inventory {
     public Inventory() {
     }
 
-    public Inventory(long id, int qty, Product product) {
+    public Inventory(String id, int qty, Product product) {
         this.id = id;
         this.qty = qty;
         this.product = product;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

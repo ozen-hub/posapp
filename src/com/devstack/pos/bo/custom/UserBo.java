@@ -5,4 +5,5 @@ import com.devstack.pos.dto.UserDto;
 
 public interface UserBo extends SuperBo {
     public void create(UserDto userDto);
+    public boolean login(String email, String password);
 }

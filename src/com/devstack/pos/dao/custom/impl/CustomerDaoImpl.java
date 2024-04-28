@@ -1,32 +1,31 @@
 package com.devstack.pos.dao.custom.impl;
 
-import com.devstack.pos.dao.custom.UserDao;
+import com.devstack.pos.dao.custom.CustomerDao;
 import com.devstack.pos.db.HibernateUtil;
-import com.devstack.pos.entity.User;
+import com.devstack.pos.entity.Customer;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class UserDaoImpl implements UserDao {
-
+public class CustomerDaoImpl implements CustomerDao {
     @Override
-    public void create(User user) {
+    public void create(Customer customer) {
         try (Session session = HibernateUtil.openSession()) {
             Transaction transaction = session.beginTransaction();
-            session.save(user);
+            session.save(customer);
             transaction.commit();
         }
     }
 
     @Override
-    public User read(String string) {
+    public Customer read(String string) {
         return null;
     }
 
     @Override
-    public void update(User user) {
+    public void update(Customer customer) {
 
     }
 
@@ -36,16 +35,10 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public List<User> readAll() {
-        return null;
-    }
-
-    @Override
-    public User loginUser(String email) {
+    public List<Customer> readAll() {
         try (Session session = HibernateUtil.openSession()) {
-            Query<User> query = session.createQuery("FROM User WHERE username= :username", User.class);
-            query.setParameter("username",email);
-            return query.uniqueResult();
+            Query<Customer> fromCustomer = session.createQuery("FROM Customer", Customer.class);
+            return fromCustomer.list();
         }
     }
 }

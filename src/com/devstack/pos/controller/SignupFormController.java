@@ -25,7 +25,7 @@ public class SignupFormController {
 
     public void registerNowOnAction(ActionEvent actionEvent) throws IOException {
         UserDto dto = new UserDto(
-                UUID.randomUUID().getLeastSignificantBits(),
+                UUID.randomUUID().toString(),
                 txtEmail.getText().trim(),
                 PasswordUtil.hash(txtPassword.getText().trim()),
                 txtFullName.getText()

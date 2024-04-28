@@ -6,7 +6,7 @@ import java.util.Date;
 @Entity
 public class Payment {
     @Id
-    private long id;
+    private String id;
     private double amount;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(columnDefinition = "DATETIME")
@@ -18,18 +18,18 @@ public class Payment {
     public Payment() {
     }
 
-    public Payment(long id, double amount, Date payDate, Orders orders) {
+    public Payment(String id, double amount, Date payDate, Orders orders) {
         this.id = id;
         this.amount = amount;
         this.payDate = payDate;
         this.orders = orders;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

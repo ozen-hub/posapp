@@ -9,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 public class User {
     @Id
-    private long id;
+    private String id;
     private String username;
     private String password;
     private String fullName;
@@ -17,18 +17,18 @@ public class User {
     public User() {
     }
 
-    public User(long id, String username, String password, String fullName) {
+    public User(String id, String username, String password, String fullName) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.fullName = fullName;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

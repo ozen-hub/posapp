@@ -8,7 +8,7 @@ import java.util.Set;
 @Entity
 public class Orders {
     @Id
-    private long id;
+    private String id;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(columnDefinition = "DATETIME")
@@ -26,7 +26,7 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(long id, Date date, double amount, Customer customer, Set<OrderDetails> orderDetails, Orders orders) {
+    public Orders(String id, Date date, double amount, Customer customer, Set<OrderDetails> orderDetails, Orders orders) {
         this.id = id;
         this.date = date;
         this.amount = amount;
@@ -35,11 +35,11 @@ public class Orders {
         this.orders = orders;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

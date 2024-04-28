@@ -7,7 +7,7 @@ import java.util.Set;
 @Entity
 public class Product {
     @Id
-    private long id;
+    private String id;
     private String name;
     private double price;
 
@@ -23,7 +23,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(long id, String name, double price, Set<Batch> batches, Inventory inventory, Set<OrderDetails> orderDetails) {
+    public Product(String id, String name, double price, Set<Batch> batches, Inventory inventory, Set<OrderDetails> orderDetails) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -32,11 +32,11 @@ public class Product {
         this.orderDetails = orderDetails;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
