@@ -8,7 +8,6 @@ import java.util.Set;
 @Entity
 public class Orders {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Temporal(TemporalType.TIMESTAMP)

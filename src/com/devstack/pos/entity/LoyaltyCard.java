@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity
 public class LoyaltyCard {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String cardNumber;
     private String type;

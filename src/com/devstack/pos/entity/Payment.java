@@ -6,7 +6,6 @@ import java.util.Date;
 @Entity
 public class Payment {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private double amount;
     @Temporal(TemporalType.TIMESTAMP)

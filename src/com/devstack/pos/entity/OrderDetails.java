@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity(name="order_details")
 public class OrderDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private int qty;

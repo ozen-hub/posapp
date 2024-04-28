@@ -1,23 +1,15 @@
-package com.devstack.pos.entity;
+package com.devstack.pos.dto;
 
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
-public class User {
-    @Id
+public class UserDto {
     private long id;
     private String username;
     private String password;
     private String fullName;
 
-    public User() {
+    public UserDto() {
     }
 
-    public User(long id, String username, String password, String fullName) {
+    public UserDto(long id, String username, String password, String fullName) {
         this.id = id;
         this.username = username;
         this.password = password;

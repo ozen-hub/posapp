@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity
 public class Inventory {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private int qty;
     @OneToOne(fetch = FetchType.LAZY)

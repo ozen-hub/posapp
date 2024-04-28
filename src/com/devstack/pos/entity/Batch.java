@@ -7,7 +7,6 @@ import java.util.Date;
 @Entity
 public class Batch {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(columnDefinition = "DATETIME")
